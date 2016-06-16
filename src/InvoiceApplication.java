@@ -25,7 +25,7 @@ public class InvoiceApplication {
 		System.out.println("Enter tax as decimal");
 		tax= keyboard.nextDouble();
 		
-		//enters values into array
+	try{	//enters values into array
 		while(choice.equals("go")||choice.equals("Yes")){
 			System.out.println("Enter next price");
 			myPrices[counter]= keyboard.nextDouble();
@@ -47,6 +47,16 @@ public class InvoiceApplication {
 			double grandtotal = (subtotal*tax)+ subtotal;
 			System.out.print("Grand Total: " + grandtotal);
 		}
-
+	}
+	catch(ArrayIndexOutOfBoundsException e){
+			System.out.println("You can no longer input prices");
   }
+	catch(Exception e){
+		System.out.println("Sorry. and error has ocured that we cant fix");
+		
+	}
+	finally{
+		System.out.println("\nThanks for using our application");
+	}
+ }
 }
